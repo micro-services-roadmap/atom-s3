@@ -15,7 +15,7 @@ type S3 struct {
 }
 
 type AwsS3 struct {
-	S3
+	S3 `yaml:",inline" mapstructure:",squash"`
 
 	PathPrefix       string `mapstructure:"path-prefix" json:"path-prefix,optional" yaml:"path-prefix"`
 	S3ForcePathStyle bool   `mapstructure:"s3-force-path-style" json:"s3-force-path-style,optional" yaml:"s3-force-path-style"`
