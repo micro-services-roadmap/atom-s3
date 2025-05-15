@@ -2,7 +2,7 @@ package atoms3
 
 import (
 	v4 "github.com/aws/aws-sdk-go-v2/aws/signer/v4"
-	"github.com/micro-services-roadmap/atom-s3/configx"
+	"github.com/micro-services-roadmap/atom-s3/configs3"
 	"github.com/micro-services-roadmap/atom-s3/uploader"
 	"mime/multipart"
 )
@@ -27,10 +27,10 @@ type S3 interface {
 }
 
 // NewS3 OSS的实例化方法
-func NewS3(c *configx.AwsS3) (S3, error) {
+func NewS3(c *configs3.AwsS3) (S3, error) {
 	return uploader.NewS3Client(c)
 }
 
-func NewLocal(c *configx.Local) (Uploader, error) {
+func NewLocal(c *configs3.Local) (Uploader, error) {
 	return uploader.NewLocalClient(c)
 }

@@ -3,7 +3,7 @@ package uploader
 import (
 	"bytes"
 	"fmt"
-	"github.com/micro-services-roadmap/atom-s3/configx"
+	"github.com/micro-services-roadmap/atom-s3/configs3"
 	"io"
 	"mime/multipart"
 	"os"
@@ -11,7 +11,7 @@ import (
 )
 
 func TestNewLocalClient(t *testing.T) {
-	c, err := NewLocalClient(&configx.Local{
+	c, err := NewLocalClient(&configs3.Local{
 		Path:      "uploads/file",
 		StorePath: "uploads/file",
 	})

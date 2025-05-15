@@ -2,13 +2,13 @@ package uploader
 
 import (
 	"fmt"
-	"github.com/micro-services-roadmap/atom-s3/configx"
+	"github.com/micro-services-roadmap/atom-s3/configs3"
 	"testing"
 )
 
 func TestR2S3Client(t *testing.T) {
-	s3, err := NewS3Client(&configx.AwsS3{
-		S3: configx.S3{
+	s3, err := NewS3Client(&configs3.AwsS3{
+		S3: configs3.S3{
 			Endpoint:  "https://251167b1b2a63fb935d4a20e2c1966af.r2.cloudflarestorage.com",
 			Bucket:    "na-test",
 			Region:    "auto",
@@ -33,8 +33,8 @@ func Test_awsS3Client_UploadFile(t *testing.T) {
 }
 
 func TestOssS3Client(t *testing.T) {
-	s3, err := NewS3Client(&configx.AwsS3{
-		S3: configx.S3{
+	s3, err := NewS3Client(&configs3.AwsS3{
+		S3: configs3.S3{
 			Endpoint:  "https://oss-cn-hangzhou.aliyuncs.com",
 			Bucket:    "project-ec",
 			Region:    "hangzhou",
@@ -55,8 +55,8 @@ func TestOssS3Client(t *testing.T) {
 }
 
 func TestCosS3Client(t *testing.T) {
-	s3, err := NewS3Client(&configx.AwsS3{
-		S3: configx.S3{
+	s3, err := NewS3Client(&configs3.AwsS3{
+		S3: configs3.S3{
 			Endpoint:  "https://cos.ap-shanghai.myqcloud.com",
 			Bucket:    "project-ec-1300043990",
 			Region:    "ap-shanghai",

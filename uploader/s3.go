@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"github.com/micro-services-roadmap/atom-s3/configx"
+	"github.com/micro-services-roadmap/atom-s3/configs3"
 	"github.com/micro-services-roadmap/atom-s3/util"
 	"log"
 	"mime/multipart"
@@ -18,7 +18,7 @@ import (
 )
 
 type awsS3Client struct {
-	*configx.AwsS3
+	*configs3.AwsS3
 	*s3.Client
 }
 
@@ -114,7 +114,7 @@ func (c *awsS3Client) PreSigned(key string) (*v4.PresignedHTTPRequest, error) {
 }
 
 // NewS3Client Create S3 session
-func NewS3Client(c *configx.AwsS3) (*awsS3Client, error) {
+func NewS3Client(c *configs3.AwsS3) (*awsS3Client, error) {
 	r2Resolver := aws.EndpointResolverWithOptionsFunc(
 		func(service, region string, options ...interface{}) (aws.Endpoint, error) {
 			return aws.Endpoint{URL: c.Endpoint}, nil

@@ -2,7 +2,7 @@ package uploader
 
 import (
 	"errors"
-	"github.com/micro-services-roadmap/atom-s3/configx"
+	"github.com/micro-services-roadmap/atom-s3/configs3"
 	"github.com/micro-services-roadmap/atom-s3/util"
 	"io"
 	"mime/multipart"
@@ -13,7 +13,7 @@ import (
 )
 
 type local struct {
-	*configx.Local
+	*configs3.Local
 }
 
 func (c *local) UploadFile(file *multipart.FileHeader) (string, string, error) {
@@ -61,7 +61,7 @@ func (c *local) DeleteFile(key string) error {
 	return nil
 }
 
-func NewLocalClient(c *configx.Local) (*local, error) {
+func NewLocalClient(c *configs3.Local) (*local, error) {
 	return &local{
 		Local: c,
 	}, nil
