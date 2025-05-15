@@ -15,9 +15,21 @@ type S3 struct {
 }
 
 type AwsS3 struct {
-	S3 `yaml:",inline" mapstructure:",squash"`
+	S3 // `yaml:",inline" mapstructure:",squash"`
 
 	PathPrefix       string `mapstructure:"path-prefix" json:"path-prefix,optional" yaml:"path-prefix"`
 	S3ForcePathStyle bool   `mapstructure:"s3-force-path-style" json:"s3-force-path-style,optional" yaml:"s3-force-path-style"`
 	DisableSSL       bool   `mapstructure:"disable-ssl" json:"disable-ssl,optional" yaml:"disable-ssl"`
+}
+
+type TencentCOS struct {
+	S3
+
+	PathPrefix string `mapstructure:"path-prefix" json:"path-prefix" yaml:"path-prefix"`
+}
+
+type AliyunOSS struct {
+	S3
+
+	BasePath string `mapstructure:"base-path" json:"base-path" yaml:"base-path"`
 }
