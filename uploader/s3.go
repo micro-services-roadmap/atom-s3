@@ -1,6 +1,7 @@
 package uploader
 
 import (
+	"bytes"
 	"context"
 	"errors"
 	"fmt"
@@ -67,6 +68,26 @@ func (c *awsS3Client) UploadFile(file *multipart.FileHeader) (string, string, er
 	}
 
 	return path.Join(c.BaseURL, filename), fileKey, nil
+}
+
+// Deprecated: use PreSigned
+// @see https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/s3-example-basic-bucket-operations.html#s3-examples-bucket-ops-upload-file-to-bucket
+func (c *awsS3Client) UploadFileV2(name string, bs []byte, ct string) (string, string, error) {
+	fileKey, filename := c.GetFilename(name, time.Now().Unix())
+
+	_, err := c.Client.PutObject(context.TODO(), &s3.PutObjectInput{
+		Bucket:      aws.String(c.Bucket),
+		Key:         aws.String(filename),
+		Body:        bytes.NewReader(bs),
+		ContentType: aws.String(ct),
+	})
+	if err != nil {
+		fmt.Println("function uploader.Upload() failed", err)
+		return "", "", err
+	}
+
+	return path.Join(c.BaseURL, filename), fileKey, nil
+
 }
 
 // DeleteFile

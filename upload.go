@@ -17,7 +17,7 @@ type S3 interface {
 	Uploader
 	GetFilename(key string, timestamp ...int64) (string, string)
 
-	//UploadFile(name string, bs []byte, ct string) (string, string, error)
+	UploadFileV2(name string, bs []byte, ct string) (string, string, error)
 	//UploadFile(file *multipart.FileHeader) (string, string, error)
 	//DeleteFile(key string) error
 
