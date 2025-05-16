@@ -2,8 +2,8 @@ package atoms3
 
 import (
 	v4 "github.com/aws/aws-sdk-go-v2/aws/signer/v4"
-	"github.com/micro-services-roadmap/atom-s3/configs3"
-	"github.com/micro-services-roadmap/atom-s3/uploader"
+	"github.com/gomsr/atom-s3/configs3"
+	"github.com/gomsr/atom-s3/uploader"
 	"mime/multipart"
 )
 

@@ -3,7 +3,7 @@ package uploader
 import (
 	"bytes"
 	"fmt"
-	"github.com/micro-services-roadmap/atom-s3/configs3"
+	"github.com/gomsr/atom-s3/configs3"
 	"io"
 	"mime/multipart"
 	"os"

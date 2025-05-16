@@ -2,8 +2,8 @@ package uploader
 
 import (
 	"errors"
-	"github.com/micro-services-roadmap/atom-s3/configs3"
-	"github.com/micro-services-roadmap/atom-s3/util"
+	"github.com/gomsr/atom-s3/configs3"
+	"github.com/gomsr/atom-s3/util"
 	"io"
 	"mime/multipart"
 	"os"

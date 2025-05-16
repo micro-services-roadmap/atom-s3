@@ -1,7 +1,7 @@
 package atoms3
 
 import (
-	"github.com/micro-services-roadmap/atom-s3/configs3"
+	"github.com/gomsr/atom-s3/configs3"
 	"testing"
 )
 

@@ -1,4 +1,4 @@
-module github.com/micro-services-roadmap/atom-s3
+module github.com/gomsr/atom-s3
 
 go 1.22.7
 
