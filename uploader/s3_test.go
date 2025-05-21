@@ -12,8 +12,8 @@ func TestR2S3Client(t *testing.T) {
 			Endpoint:  "https://251167b1b2a63fb935d4a20e2c1966af.r2.cloudflarestorage.com",
 			Bucket:    "na-test",
 			Region:    "auto",
-			SecretID:  "ca9b9746e41634e40b681ec224dbaab1",
-			SecretKey: "1f2978b6e98fdfb453a0ec7a75e2def77a4048ce38c2a169c413c4842a44402c",
+			SecretID:  "xxx",
+			SecretKey: "xxxx",
 			BaseURL:   "https://s3.hubby.top",
 		},
 	})
